@@ -29,6 +29,7 @@ class OptionsStruct < OpenStruct
                      :transitive => false,
                      :verbose => false,
                      :xmi => false,
+                     :yuml => false,
                      :command => '' }
     super(init_options)
   end # initialize
@@ -65,6 +66,10 @@ class OptionsStruct < OpenStruct
       opts.on("-x", "--xmi", "Produce XMI instead of DOT", 
               "  (for UML tools)") do |x|
         self.xmi = x
+      end
+      opts.on("-y", "--yuml", "Produce YUML instead of DOT", 
+              "  (for UML tools)") do |y|
+        self.yuml = y
       end
       opts.separator ""
       opts.separator "Models diagram options:"

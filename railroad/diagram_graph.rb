@@ -46,6 +46,42 @@ class DiagramGraph
      return ""
   end
 
+  def to_yuml
+      classes={}
+      parts=[]
+      parts<<@nodes.collect{|node| 
+        type=node[0]
+        name=node[1]
+        attributes=node[2]
+        case type
+          when 'model'
+               "[#{name}|#{attributes.join(';')}|#{methods.join(';')}]"
+          else
+             "[#{name}]"  
+        end
+      }
+      parts<<@edges.collect{|edge|
+        type=edge[0]
+        from=edge[1]
+        to=edge[2]
+        name=edge[3]
+        association=case type
+          when 'one-one'
+              "1-1"
+          when 'one-many'
+	          "1-*"  
+          when 'many-many'
+               "*-*"
+          when 'is-a'
+               "^-"
+          #when 'event'
+          #     options += "fontsize=10"
+        end
+        "[#{from}]#{association}[#{to}]"
+      }
+      "http://yuml.me/diagram/scruffy/class/" << parts.join(",")
+  end
+  
   private
 
   # Build DOT diagram header
