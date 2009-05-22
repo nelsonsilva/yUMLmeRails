@@ -79,7 +79,7 @@ class DiagramGraph
         end
         "[#{from}]#{association}[#{to}]"
       }
-      "http://yuml.me/diagram/scruffy/class/" << parts.join(",")
+      parts.join(",")
   end
   
   private

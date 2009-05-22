@@ -9,6 +9,8 @@ require 'railroad/diagram_graph'
 # Root class for RailRoad diagrams
 class AppDiagram
 
+  attr :graph
+  
   def initialize(options)
     @options = options
     @graph = DiagramGraph.new
