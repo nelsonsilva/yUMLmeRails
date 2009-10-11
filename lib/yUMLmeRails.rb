@@ -13,7 +13,7 @@ class YUMLmeRails
     def generate_diagram
          options = OpenStruct.new(
             :all => true,
-            :brief => true,
+            :brief => false,
             :exclude => [],
             :inheritance => false,
             :join => false,

@@ -55,7 +55,7 @@ class DiagramGraph
         attributes=node[2]
         case type
           when 'model'
-               "[#{name}|#{attributes.join(';')}|#{methods.join(';')}]"
+               "[#{name}|#{attributes.join(';')}]"
           else
              "[#{name}]"  
         end

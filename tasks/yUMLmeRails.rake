@@ -4,7 +4,7 @@ FILENAME="#{DIR}/model_" << Time.new.strftime("%b_%d_%Y") << ".png"
 
 def save_diagram url    
     FileUtils.mkdir_p DIR
-    system "wget -O #{FILENAME} #{url}"
+    system "wget -O #{FILENAME} '#{url}'"
     FILENAME
 end
 
