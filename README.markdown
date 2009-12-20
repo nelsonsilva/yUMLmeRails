@@ -1,3 +1,5 @@
+Fork from [dmitry](http://github.com/dmitry/yUMLmeRails/) < [nelsonsilva](http://github.com/nelsonsilva/yUMLmeRails/) to adapt/improve some things (according to my working style).
+
 # yUMLmeRails
 
 This is a simple plugin that adds Rake tasks to display model diagrams for RoR apps.
@@ -12,8 +14,7 @@ There's also a small Shoes app to display the downloaded diagram.
 
 ## Requirements
 
- * Shoes
- * wget (I'm using it to dowload the image for now since openuri wasn't found of my URI)
+ * Shoes (if you want to use the show-task)
     
 ## Instalation
 
@@ -21,7 +22,7 @@ There's also a small Shoes app to display the downloaded diagram.
     
 ## Usage (rake -T)
   
- * rake yUMLmeRails:download            # Download yUML model diagram
+ * rake yUMLmeRails:download            # Download yUML model diagram to doc/diagrams
  * rake yUMLmeRails:show                # Show model diagram
  * rake yUMLmeRails:url                 # Get yUML URL
     
