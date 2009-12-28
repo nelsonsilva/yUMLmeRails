@@ -15,8 +15,9 @@ There's also a small Shoes app to display the downloaded diagram.
 ## Requirements
 
  * Shoes (if you want to use the show-task)
+ * Rake >= 0.8.0 (or remove the 'arg' in the rake task yUMLmeRails:download)
     
-## Instalation
+## Installation
 
  * Just clone this into vendor/plugins
     
