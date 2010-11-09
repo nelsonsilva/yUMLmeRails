@@ -13,10 +13,9 @@ namespace :yUMLmeRails do
   desc "Show model diagram"
   task :show => :environment do
     generate_diagram
-    app = File.join(File.dirname(__FILE__), "..", "lib","shoes_app.rb")
-    sh %{shoes #{app} #{FILENAME} } do |ok, res|
+    sh %{if [ -x /usr/bin/eog ]; then eog #{FILENAME}; else open #{FILENAME}; fi & } do |ok, res|
       puts res
-      puts "shoes not found (status = #{res.exitstatus})" if !ok
+      puts "no eog (Gnome) nor open (Mac OS X) commands found" if !ok
     end
   end
 
