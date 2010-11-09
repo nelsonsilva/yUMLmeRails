@@ -12,19 +12,15 @@ There's also a small Shoes app to display the downloaded diagram.
 
 <img src="http://yuml.me/diagram/scruffy/class/[User],[Task],[Assignment],[Status],[User]1-*[Assignment],[Task]1-*[Assignment],[Task]1-*[Status]"/>
 
-## Requirements
-
- * Shoes (if you want to use the show-task)
- * Rake >= 0.8.0 (or remove the 'arg' in the rake task yUMLmeRails:download)
-    
 ## Installation
 
- * Just clone this into vendor/plugins
-    
+* Add to your Gemfile:
+  gem 'yUMLmeRails', :git => 'git://github.com/tute/yUMLmeRails.git'
+
 ## Usage (rake -T)
-  
+
  * rake yUMLmeRails:download            # Download yUML model diagram to doc/diagrams
  * rake yUMLmeRails:show                # Show model diagram
  * rake yUMLmeRails:url                 # Get yUML URL
-    
+
 Feel free to do whatever you want with the code but please share your results with us.
