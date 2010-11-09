@@ -1,5 +1,5 @@
-YUMLME_URL = 'http://yuml.me/diagram/scruffy/class/'
-FILENAME   = File.join(Rails.root, 'doc','diagrams',"model.#{Time.now.strftime('%Y%m%d-%H%M%S')}.png")
+YUMLME_URL = 'http://yuml.me/diagram/scruffy;dir:LR;/class/'
+FILENAME   = File.join(Rails.root, 'doc','diagrams',"#{Time.now.strftime('%Y%m%d-%H%M%S')}-model.png")
 
 def generate_diagram(file=FILENAME)
   require 'open-uri'

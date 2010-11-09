@@ -13,7 +13,7 @@ It uses an extended RailRoad to output yUML diagrams which are drawn using the s
 ## Installation
 
 * Add to your Gemfile:
-  gem 'yUMLmeRails', :git => 'git://github.com/tute/yUMLmeRails.git'
+  `gem 'yUMLmeRails', :git => 'git://github.com/tute/yUMLmeRails.git'`
 
 ## Usage (rake -T)
 
