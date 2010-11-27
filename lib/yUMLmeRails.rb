@@ -1,7 +1,5 @@
 require 'ostruct'
 require 'railroad/models_diagram'
-#require 'railroad/controllers_diagram'
-#require 'railroad/aasm_diagram'
 require 'yUMLmeRails/railtie' if defined?(Rails)
 
 module YUMLmeRails
@@ -31,10 +29,6 @@ module YUMLmeRails
 
       if options.command == 'models'
         diagram = ModelsDiagram.new options
-      # elsif options.command == 'controllers'
-      #   diagram = ControllersDiagram.new options
-      # elsif options.command == 'aasm'
-      #   diagram = AasmDiagram.new options
       end
 
       diagram.generate
