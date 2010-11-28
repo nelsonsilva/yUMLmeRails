@@ -1,5 +1,8 @@
 Fork from [dmitry](http://github.com/dmitry/yUMLmeRails/) < [nelsonsilva](http://github.com/nelsonsilva/yUMLmeRails/) to adapt/improve some things (according to my working style).
 
+I switched to [preston/railroady](https://github.com/preston/railroady), which
+is a more mature piece of software which serves the same purpose.
+
 # yUMLmeRails
 
 This is a simple plugin that adds Rake tasks to display model diagrams for RoR apps.
