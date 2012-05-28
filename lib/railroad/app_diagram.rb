@@ -10,7 +10,7 @@ require 'railroad/diagram_graph'
 class AppDiagram
 
   attr :graph
-  
+
   def initialize(options)
     @options = options
     @graph = DiagramGraph.new
@@ -34,8 +34,8 @@ class AppDiagram
         exit 2
       end
     end
-    
-    if @options.xmi 
+
+    if @options.xmi
         STDERR.print "Generating XMI diagram\n" if @options.verbose
     	STDOUT.print @graph.to_xmi
     elsif @options.yuml
@@ -43,7 +43,7 @@ class AppDiagram
       	STDOUT.print @graph.to_yuml
     else
         STDERR.print "Generating DOT graph\n" if @options.verbose
-        STDOUT.print @graph.to_dot 
+        STDOUT.print @graph.to_dot
     end
 
     if @options.output
@@ -51,15 +51,15 @@ class AppDiagram
     end
   end # print
 
-  private 
+  private
 
   # Prevents Rails application from writing to STDOUT
   def disable_stdout
     @old_stdout = STDOUT.dup
-    STDOUT.reopen(PLATFORM =~ /mswin/ ? "NUL" : "/dev/null")
+    STDOUT.reopen(RUBY_PLATFORM =~ /mswin/ ? "NUL" : "/dev/null")
   end
 
-  # Restore STDOUT  
+  # Restore STDOUT
   def enable_stdout
     STDOUT.reopen(@old_stdout)
   end
@@ -67,15 +67,14 @@ class AppDiagram
 
   # Print error when loading Rails application
   def print_error(type)
-    STDERR.print "Error loading #{type}.\n  (Are you running " +
-                 "#{APP_NAME} on the aplication's root directory?)\n\n"
+    STDERR.print "Error loading #{type}.\n\n"
   end
 
   # Load Rails application's environment
   def load_environment
     begin
       disable_stdout
-      require "config/environment"
+      require "#{Rails.root}/config/application"
       enable_stdout
     rescue LoadError
       enable_stdout
